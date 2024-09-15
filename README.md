@@ -1,13 +1,13 @@
 # Feature Remover
 
-This repository was created as part of my Bachelors' thesis "Removing Texture Features using Generative Adversarial Networks". 
+This repository was created as part of my Bachelor's thesis "Removing Texture Features using Generative Adversarial Networks". 
 
 # Background
-In my thesis I worked on a the GRASS image processing project at Technische Hochschule Würzburg Schweinfurt, in which ways to automate intralogistic processes are researched. 
+In my thesis, I worked on the GRASS image processing project at Technische Hochschule Würzburg Schweinfurt, in which ways to automate intralogistic processes are researched. 
 
-In this project a box recognition algorithm is used for an efficient de-palletization process. 
-One issue herein are several prints, stickers and alike (herein called features) which impede the box recognition algorithm.
-My task was to train and evaluate GANs which remove such features and therefore facilitate an efficient recognition. 
+This project uses a box recognition algorithm for an efficient de-palletization process. 
+One issue herein is several prints, stickers, and alike (herein called features) that impede the box recognition algorithm.
+My task was to train and evaluate GANs that remove such features and therefore facilitate efficient recognition. 
 
 # How to run the software? 
 
@@ -28,15 +28,16 @@ The input images shall be placed in the ./input folder.
 
 
 ## Run the scripts
-Now the programms can be run as 
+Now the scripts can be run:
 
 ### compare_models.py
-In order to evaluate the various GAN models, this script infers images which are placed in the ./input folder using the pix2pix, CycleGAN and Vit-GAN model. 
-The result of every image is displayed afterwards. 
-If wished, the images can be saved in the ./output folder by specifying the --save flag.
+This script infers images placed in the ./input folder using the pix2pix, CycleGAN, and Vit-GAN models to evaluate the various GAN models. 
+The result of every image is displayed afterward. 
+If wished, the images can be saved in the ./output folder by specifying the `--save` flag.
 
 Additionally, an edge map can be created using the canny algorithm. To do so, the `--canny` flag has to be specified.
 
-
-### analyze_video.py
-This script analyzes a video file which is g
+So to save the resulting images with a canny edge map, the following command shall be executed:
+```bash
+python3 compare_models.py --save True --canny True
+```
